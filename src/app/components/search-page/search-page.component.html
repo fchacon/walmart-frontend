@@ -1,0 +1,6 @@
+<app-search (search)="searchProducts($event)"></app-search>
+<app-search-result
+	[products]="products"
+	[totalProducts]="totalProducts"
+	(changePage)="searchProducts(currentSearch, $event)"
+></app-search-result>

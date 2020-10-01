@@ -1,0 +1,36 @@
+<div *ngIf="products" class="p-d-flex p-flex-column p-flex-sm-row p-flex-wrap products-container">
+	<div *ngFor="let product of products" class="p-mb-2 p-mr-2 card">
+		<div class="imagen-container">
+			<img [src]="getImageUrl(product.image)" alt="Imagen del producto" />
+		</div>
+		<div>
+			<span class="brand">{{ product.brand }}</span>
+			<span class="description">{{ product.description }}</span>
+		</div>
+		<div class="price-container">
+			<ng-container *ngIf="product.discount > 0; else noDiscount">
+				<div class="price-discount">
+					<span class="price">
+						{{ getPrice((product.price * product.discount) / 100 | currency: 'CLP') }}
+					</span>
+					<span class="discount-badge"> {{ product.discount }}% </span>
+				</div>
+				<div>
+					<span class="strike">{{ getPrice(product.price | currency: 'CLP') }}</span>
+				</div>
+			</ng-container>
+			<ng-template #noDiscount>
+				<span class="price">
+					{{ getPrice(product.price | currency: 'CLP') }}
+				</span>
+			</ng-template>
+		</div>
+	</div>
+</div>
+<p-paginator
+	*ngIf="totalProducts > itemsPerPage"
+	[rows]="itemsPerPage"
+	[totalRecords]="totalProducts"
+	pageLinkSize="3"
+	(onPageChange)="paginate($event)"
+></p-paginator>

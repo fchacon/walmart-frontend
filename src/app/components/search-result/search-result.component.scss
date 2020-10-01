@@ -1,0 +1,59 @@
+.products-container {
+	padding: 2rem;
+	.card {
+		background-color: #ffffff;
+		padding: 1rem;
+		border-radius: 4px;
+		box-shadow: 0 2px 1px -1px rgba(0, 0, 0, 0.2), 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12);
+		margin: 1rem;
+		min-width: 255px;
+
+		.brand {
+			font-size: 1.2rem;
+			font-weight: 800;
+			margin-right: 5px;
+		}
+
+		.description {
+			font-size: 1.2rem;
+			color: #6e6e6e;
+		}
+		.price-container {
+			margin-top: 10px;
+
+			.price-discount {
+				margin-bottom: 10px;
+			}
+
+			.strike {
+				font-size: 1rem;
+				text-decoration: line-through;
+			}
+
+			.price {
+				font-size: 1.5rem;
+				line-height: 2rem;
+				vertical-align: middle;
+				color: #6e6e6e;
+			}
+
+			.discount-badge {
+				font-size: 1rem;
+				line-height: 2rem;
+				color: #ffffff;
+				padding: 0.5rem;
+				background-color: red;
+				border-radius: 5px;
+				margin-left: 5px;
+			}
+		}
+
+		.imagen-container {
+			text-align: center;
+			img {
+				width: 150px;
+				height: auto;
+			}
+		}
+	}
+}
